@@ -1,0 +1,11 @@
+git init
+git status
+git add .
+git commit -m "initial commit"
+
+heroku login
+heroku create
+
+git remote add heroku https://git.heroku.com/fierce-bayou-42640.git
+git push heroku server01   >>> didnt work for me, the i change deploy it from master
+git push heroku master
