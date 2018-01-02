@@ -5,4 +5,8 @@ app.get('/', (req, res) => {
 	res.send({ hi: 'there' });
 });
 
-app.listen(5000);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
+// process.env.PORT is for heroku
+// to assign the port later on after we deploy the app.
+// 5000 is for localhost on my PC
