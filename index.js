@@ -2,7 +2,7 @@ const app = require('express')(),
 	bodyParser = require('body-parser');
 
 app.get('/', (req, res) => {
-	res.send({ hi: 'there' });
+	res.send({ hi: 'there', let: 'me try again' });
 });
 
 const PORT = process.env.PORT || 5000;
