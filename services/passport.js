@@ -22,11 +22,11 @@ passport.use(
 		},
 		(accessToken, refreshToken, profile, done) => {
 			User.findOne({ googleId: profile.id }).then(existingUser => {
-				if (!existingUser) {
-					new User({ googleId: profile.id }).save().then(user => done(null, existingUser));
-					console.log(profile);
-				} else {
+				if (existingUser) {
 					done(null, existingUser);
+				} else {
+					new User({ googleId: profile.id, email: profile.emails[0].value }).save().then(user => done(null, user)); // remember the 'user' here need to be the same as serialize 'user'
+					console.log(profile);
 				}
 			});
 		}
