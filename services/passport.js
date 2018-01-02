@@ -2,8 +2,8 @@ const passport = require('passport'),
 	GoogleStrategy = require('passport-google-oauth20').Strategy,
 	keys = require('../config/keys'),
 	mongoose = require('mongoose');
-
 const User = mongoose.model('users');
+
 passport.serializeUser((user, done) => {
 	done(null, user.id);
 });
@@ -12,7 +12,6 @@ passport.deserializeUser((id, done) => {
 		done(null, user);
 	});
 });
-
 passport.use(
 	new GoogleStrategy(
 		{
