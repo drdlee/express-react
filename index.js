@@ -1,4 +1,5 @@
-const app = require('express')(),
+const express = require('express'),
+	app = express(),
 	mongoose = require('mongoose'),
 	keys = require('./config/keys'),
 	cookieSession = require('cookie-session'),
